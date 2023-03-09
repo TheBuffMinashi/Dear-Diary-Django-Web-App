@@ -1,0 +1,20 @@
+<!-- entries/templates/entries/base.html -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Diary</title>
+    <link rel="stylesheet" href="{% static 'entries/css/diary.css' %}">
+</head>
+
+<body>
+    <h1><a href="/">Dear Diary</a></h1>
+
+    {% block content %}{% endblock %}
+
+</body>
+
+</html>
