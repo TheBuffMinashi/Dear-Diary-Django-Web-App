@@ -53,6 +53,17 @@ To use the application, follow these steps:
 4. To view an existing entry, click on the entry title in the diary homepage.
 5. To delete or edit an entry, click on the entry title in the diary homepage and then click the "Delete" or "Edit" button.
 
+## Next Steps
+Here are some ideas for future improvements to this diary app:
+
+* Add a page for your most recent entries.
+* Give every weekday a color.
+* Show the creation date in the HTML `<title>` tag.
+* Create an emoji of the day selection for an entry.
+* Paginate the list of entries.
+
+Feel free to fork this project and implement any of these ideas or come up with your own. If you make any changes, please submit a pull request so that others can benefit from your improvements.
+
 ## Contributing
 Contributions to this project are welcome! If you have any suggestions or feature requests, please open an issue or submit a pull request.
 
