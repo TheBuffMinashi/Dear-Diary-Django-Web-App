@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': config('MYSQL_DATABASE', default='diary_db'),
         'USER': config('MYSQL_USER', default='root'),
         'PASSWORD': config('MYSQL_PASSWORD', default=''),
-        'HOST': '127.0.0.1',
+        'HOST': 'db',
         'PORT': config('DB_PORT', default='3306'),
     }
 }
