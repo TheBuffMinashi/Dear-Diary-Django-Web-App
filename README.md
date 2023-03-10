@@ -57,7 +57,7 @@ To use the application, follow these steps:
 Contributions to this project are welcome! If you have any suggestions or feature requests, please open an issue or submit a pull request.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgements
 This project was developed by Minashi, inspired by the tutorial [Build a Personal Diary With Django and Python](https://realpython.com/django-diary-project-python/) from Real Python. I would like to express my gratitude to the Django project for providing the powerful web framework that made this app possible.
