@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,11 +80,11 @@ WSGI_APPLICATION = 'diary.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DATABASE NAME',
-        'USER': 'root',
-        'PASSWORD': 'DATABASE PASSWORD',
+        'NAME': config('MYSQL_DATABASE', default='diary_db'),
+        'USER': config('MYSQL_USER', default='root'),
+        'PASSWORD': config('MYSQL_PASSWORD', default=''),
         'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'PORT': config('DB_PORT', default='3306'),
     }
 }
 
