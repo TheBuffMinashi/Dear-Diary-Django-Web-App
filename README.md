@@ -5,7 +5,7 @@ Dear Diary is a web application built using Django that allows a single user to 
 The users can create new entries, view and edit existing entries, and delete entries that are no longer needed.<br>
 The app is built using Django templating language and uses MySQL as the database.<br>
 
-## Installation
+## Installation Without Docker
 To install and run the application, follow these steps:
 
 1. Clone the repository to your local machine:
@@ -15,19 +15,15 @@ To install and run the application, follow these steps:
 <pre><code>pip install -r requirements.txt</pre></code>
 
 3. Create a new MySQL database for the app.
-4. Set up the database connection by adding the following information to the `DATABASES` setting in `settings.py`:
-<pre><code>DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'YOUR DATABASE NAME',
-        'USER': 'YOUR MySQL USERNAME',
-        'PASSWORD': 'YOUR MySQL PASSWORD',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}</pre></code>
-
-Replace the `YOUR DATABASE NAME`, `YOUR MySQL USERNAME`, and `YOUR MySQL PASSWORD` placeholders with your own MySQL database name, username, and password.<br>
+4. There is a file named `.env.sample` in the project's root directory. Change it's name to `.env` and complete the necessary variables:
+```
+SECRET_KEY = (Django secret key)
+MYSQL_DATABASE = (name of the mysql database)
+MYSQL_USER = (name of the mysql user)  
+MYSQL_PASSWORD = (password for mysql user)
+DB_PORT = (desired prt for mysql - default is 3306)
+```
+* You can generate a Django secret key from [this website](https://djecrety.ir/).
 
 5. Run the migrations to create the necessary tables in the database:
 <pre><code>python manage.py makemigrations</pre></code>
@@ -44,6 +40,28 @@ If you want to run the app on a specific port, you can run:
 <pre><code> python manage.py runserver 127.0.0.1:PORT NUMBER </pre></code>
 replace `PORT NUMBER` with the desired port number.
 
+
+## Installation With Docker
+If you are not willing to install the dependencies on your system, you could easily build and run the project's docker container with 2 simple commands.
+
+1. Clone the repository to your local machine:
+<pre><code>git clone https://github.com/TheBuffMinashi/Dear-Diary-Django-Web-App.git</pre></code>
+2. Before building the containers, You need to complete the `.env.sample` file and change it's name to `.env`:
+```
+SECRET_KEY = (Django secret key)
+MYSQL_DATABASE = (name of the mysql database)
+MYSQL_USER = (name of the mysql user)  
+MYSQL_PASSWORD = (password for mysql user)
+DB_PORT = (desired prt for mysql - default is 3306)
+PORT = (desired port number)
+MYSQL_ROOT_PASSWORD = (password for mysql root user)
+```
+3. Now you can build and run the containers:
+```
+docker-compose build
+docker-compose up
+```
+You can access the application by heading to `localhost:PORT` in your browser. `PORT` is the same as the one in `.env` file.
 ## Usage
 To use the application, follow these steps:
 
